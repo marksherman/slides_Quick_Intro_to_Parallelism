@@ -5,11 +5,14 @@ Lecture slide deck by Mark Sherman, Ph.D.
 [Download here as pdf](QuickIntroToParallelism.pdf)
 
 ## How to Build
-Uses [marp](https://marp.app)
+Uses [marp](https://marp.app). Highly recommend using the marp plugin for Visual Studio Code. It can do everything you need without installing anything else, including exporting. I also used the marp command line program to make the html and pdf outputs, which you see here. It would be the same as if you exported those from the VS Code plugin!
 
-Developed and presented with `marp -s -w .`
+### HTML Generation
+```bash
+marp PITCHME.md -o index.html
+```
 
-PDF rendered with:
+### PDF Generation
 
 ```bash
 marp --pdf --allow-local-files PITCHME.md -o QuickIntroToParallelism.pdf
