@@ -222,3 +222,22 @@ section {
 - GPGPU is the field of doing general-purpose computing using GPUs
 - CPUs are different than GPUs and each has a time and a place
 - Parallel execution can also be distributed over a cluster of machines
+
+---
+# Parallel Code Activity
+- Here is a naïve, sequential bit of code to find the largest value in a list of numbers. 
+- Can this be run in parallel? Why or why not?
+
+```js
+    // assume the variable 'list' contains the list
+    let max = Number.MIN_VALUE;
+    for(let i = 0; i < list.length; i++) {
+        if (list[i] > max) {
+            max = list[i];
+        }
+    }
+```
+* How could this be rewritten to find the max in a parallel way?
+<!-- This code is inherently sequential, in that it looks at each value in turn, and if you go out of order the varianle 'max' could be inconsistent and cause errors. 
+
+But this operation can be written in a way that is parallel, where the list is broken up into chunks. Each chunk is looked at in parallel for the biggest value in that chunk, then the results of all the chunks are put into a new list, which can then be evaluated the same way until only one value remains, the biggest of all the chunks.-->
